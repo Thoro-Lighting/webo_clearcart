@@ -10,6 +10,10 @@ class DisplayClearCartBtn extends AbstractHook {
 
     public function execute(array $params)
     {
+        if(empty($this->context->cart->getProducts())) {
+            return '';
+        }
+
         return $this->module->fetch($this->getTemplateFullPath());
     }
 
