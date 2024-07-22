@@ -1,0 +1,25 @@
+{
+  "name": "webo/webo_clearcart",
+  "description": "Webo clear cart module",
+  "type": "prestashop-module",
+  "license": "AFL-3.0",
+  "authors": [
+    {
+      "name": "Webo",
+      "email": "adrian@webo.agency",
+      "role": "Web Agency"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "WeboClearCart\\": "src/"
+    }
+  },
+  "require": {
+    "php": ">=7.2.0"
+  },
+  "config": {
+    "preferred-install": "dist",
+    "prepend-autoloader": false
+  }
+}

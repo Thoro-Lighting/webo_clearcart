@@ -1,0 +1,16 @@
+imports:
+  - { resource: ../common.yml }
+
+services:
+  _defaults:
+    public: true
+
+  webo_clearcart.hook.display_clear_cart_btn:
+    class: WeboClearCart\Hook\DisplayClearCartBtn
+    public: true
+    parent: 'webo_clearcart.hook.abstract_hook'
+
+  webo_clearcart.hook.action_front_controller_set_media:
+    class: WeboClearCart\Hook\ActionFrontControllerSetMedia
+    public: true
+    parent: 'webo_clearcart.hook.abstract_hook'

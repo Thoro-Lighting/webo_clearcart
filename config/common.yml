@@ -1,0 +1,16 @@
+services:
+  _defaults:
+    public: true
+
+  webo_clearcart.module:
+    class: webo_clearcart
+    factory: [ 'Module', 'getInstanceByName' ]
+    public: false
+    arguments:
+      - 'webo_clearcart'
+
+  webo_clearcart.hook.abstract_hook:
+    class: WeboClearCart\Hook\AbstractHook
+    arguments:
+      - '@webo_clearcart.module'
+      - "@=service('prestashop.adapter.legacy.context').getContext()"
