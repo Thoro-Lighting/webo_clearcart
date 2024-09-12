@@ -1,4 +1,5 @@
 window.addEventListener("load", function() {
+    alert('work');
     $('body').on('click', '.js-webo-clear-cart',  () => {
         $.ajax({
             type: "POST",
@@ -9,6 +10,11 @@ window.addEventListener("load", function() {
                         reason: {
                             linkAction: 'clear-cart',
                         }
+                    });
+
+                    prestashop.emit('updateCart', {
+                        reason: 'refresh',
+                        resp: {},
                     });
                 }
             }
